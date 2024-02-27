@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+      integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="./login_common_fb.js"></script>
+    <script src="./login_common_ig.js"></script>
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+              appId      : '1827573131022583',
+              cookie     : true,
+              xfbml      : true,
+              version    : 'v19.0'
+            });
+              
+            FB.AppEvents.logPageView();   
+              
+          };
+        
+        (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+
+        
+        $(function(){
+            $("#header").load("./common/header.html"); 
+        });
+      </script>
+      <style>
+        #userData {
+            width: 50%;
+            margin-left: 20px;
+            padding: 20px;
+        }
+      </style>
+  </head>
+  <body>
+    <div id="header"></div>
+    <a id="fbLink"></a>
+    <!-- Display login status -->
+    <div id="status"></div>
+    <!-- Display user profile data -->
+    <div id="userData"></div>
+    <div id="authResponse"></div>
+    
+    <!-- Facebook login -->
+    <!-- Facebook login -->
+    <!-- Facebook login -->
+    <h1>Facebook login</h1>
+    <h3>・App Id: 1827573131022583</h3>
+    <h3>・App Type: Consumer </h3>
+    <h3>・App Mode: Development </h3>
+    <br><br>
+    <fb:login-button 
+        scope="public_profile,email"
+        onlogin="fbLogin();"
+    ></fb:login-button>
+
+    <!-- Instagram login -->
+    <!-- Instagram login -->
+    <!-- Instagram login -->
+    <h1>Instagram login (Instagram Basic Display)</h1>
+    <p>Instagram Basic Display allows apps to access the Instagram Basic Display API, which provides read-only access to basic data in app users' Instagram accounts. Note that Basic Display is not an authentication tool.</p>
+    <h3>・Instagram App ID: 421701260290843</h3>
+    <h3>Instagram App Secret: 024eeb2b0c71fe1009e6c05b85109935</h3>
+    <h3>・Client OAuth Settings: https://ac35-240b-250-a80-4d10-10d0-32f1-4fef-e1c1.ngrok-free.app/login_common.html</h3>
+
+    <!-- Instagram login or logout button -->
+    <!-- <a href="javascript:void(0)" onclick="instagramLogin();">Login with Instagram</a> -->
+    <a href="javascript:void(0)" onclick="instagramLogin();">Login with Instagram</a>
+
+  </body>
+</html>
